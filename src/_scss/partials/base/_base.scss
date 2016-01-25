@@ -1,0 +1,129 @@
+/****************************************************************************
+*	BASE STYLES
+*   Base rules are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, *   a base style says that wherever this element is on the page, it should look like this.
+\****************************************************************************/
+body {
+	font: normal normal normal 14px/normal $font-lato;
+	color: $black;
+} 
+
+hr
+{
+    border-width: 2px;
+}
+
+/****************************************************************************
+*	TYPOGRAPHY
+\****************************************************************************/
+p {
+	font: chFont(p);		
+}
+small {
+	font: chFont(small);
+}
+ul,
+ol {
+	li 
+	{
+		margin-top: 8px;
+		margin-bottom: 8px;
+		font: chFont(p);
+	}
+}
+h1 {
+	font: chFont(h1);
+}
+h2 {
+	font: chFont(h2);
+}
+h3 {
+	font: chFont(h3);
+}
+h4 {
+	font: chFont(h4);
+}
+h5 {
+	font: chFont(h5);
+}
+h6 {
+	font: chFont(h6);
+}
+
+/****************************************************************************
+*	LINKS
+\****************************************************************************/
+a,
+a:visited,
+a:before,
+a:after
+{
+	color: $black;
+	text-decoration: underline;
+	@include transition(color .3s ease);
+	&:hover,
+	&:active,
+	&:focus
+	{
+		color: $green; 
+		i // icon links
+		{
+			text-decoration: none;
+		}
+	}
+	i // icon links
+	{
+		text-decoration: none;
+		display: inline-block;
+	}
+}
+
+small {
+	&> a,
+	&> a:visited 
+	{
+		@include opacity(0.4);
+		@include transition(all .3s ease);
+		&:hover,
+		&:active
+		{
+			@include opacity(1);
+		}
+	}
+}
+
+
+/****************************************************************************
+*	FORM
+\****************************************************************************/
+form,
+.form
+{
+	h4
+	{
+		font: chFont(h4);
+		color: $green;
+		margin: 15px 0 0 0;
+	}
+	hr
+	{
+		display: block;
+		margin: 15px 0;
+		border-color: #bac9d1;
+	}
+	.controls
+	{
+		margin-top: 25px;	
+	}
+}
+
+
+/****************************************************************************
+*	OUTLINES - remove all focus outlines
+\****************************************************************************/
+*:focus
+{
+	outline: none !important;
+	 border-color: inherit;
+  	-webkit-box-shadow: none;
+  	box-shadow: none;
+}

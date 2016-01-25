@@ -1,0 +1,31 @@
+{
+  "name": "tradeweb",
+  "version": "1.0.0",
+  "description": "Tradeweb Redesign",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim Giegel",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "cz-conventional-changelog": "^1.1.5",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.1.1",
+    "imagemin-pngquant": "^4.2.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.5",
+    "stream-series": "^0.1.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

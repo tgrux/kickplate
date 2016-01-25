@@ -1,0 +1,44 @@
+/**
+ * Font tag type styles
+ * use to apply a specific type tag treatment to another tag
+ * @author: tgiegel@celerity.com
+ * 
+ * useage: 
+ * 		p {font: ch_font(p);}
+ */ 
+$p: 14px;
+$small: 12px;
+$h1: 38px;
+$h2: 28px;
+$h3: 22px;
+$h4: 18px;
+$h5: 16px;
+$h6: 14px;
+ 
+@function chFont($tagType)
+{
+	@if $tagType == p {
+  		@return normal normal normal #{$p}/24px $font-lato;
+	}
+	@if $tagType == small {
+  		@return normal normal normal #{$small}/normal $font-lato;
+	}
+	@else if $tagType == h1 {
+  		@return normal 300 normal #{$h1}/normal $font-roboto;
+	} 
+	@else if $tagType == h2 {
+  		@return normal normal normal #{$h2}/normal $font-lato;
+	} 
+	@else if $tagType == h3 {
+  		@return normal 300 normal #{$h3}/normal $font-roboto;
+	} 
+	@else if $tagType == h4 {
+  		@return normal normal normal #{$h4}/normal $font-lato;
+	} 
+	@else if $tagType == h5 {
+  		@return normal normal normal #{$h5}/normal $font-roboto;
+	} 
+	@else if $tagType == h6 {
+  		@return normal normal normal #{$h6}/normal $font-lato;
+	}
+}

@@ -1,0 +1,37 @@
+@import "helpers";
+
+/**
+ * "all-partials" are imported into the main SCSS file.
+ * order matters, so please double check where you are adding things
+ * Using SMACSS - https://smacss.com/book/categorizing
+ */
+// consider installing 
+// https://github.com/colindresj/saffron
+// http://typesettings.io/
+// https://sassline.com/
+
+@import "base/custom-icons";
+// FRAMEWORKS
+
+
+// FRAMEWORK OVERRIDES
+
+
+// BASE
+@import "base/base";
+
+
+
+// LAYOUT
+// most of these styles can be found with the angular component
+
+
+// MODULES
+// many of these styles can be found with the angular component
+
+
+
+// STATE
+
+
+// THEME
