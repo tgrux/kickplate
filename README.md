@@ -1,22 +1,19 @@
 # README #
 
 ### What is this repository for? ###
-* Kickplate - Build process starter kit
-* v0.1
+Kickplate - Build process starter kit
+
+Lightweight modular build process focusing on Celerity Wexford's tech stack. This build process is specific to our needs, but is modular enough for us to quickly customize it to new languages and processes.
+
 ----------
-# Overview #
-Lightweight modular build process focusing on Celerity Wexford's tech stack.
 
-This build process is specific to our needs, but is modular enough for us to quickly customize it to new languages and processes.
+## Install ##
+1. Pull down the Repo
+2. Install [npm](https://nodejs.org/download/) -- if you are using nvm, you only need to run `nvm use`, there is a nvmrc file.
+3. Fetch node modules `npm install`
+4. Install gulp `npm install gulp`
 
-
-#### Install ####
-# Pull down the Repo
-# Install [npm](https://nodejs.org/download/) -- if you are using nvm, you only need to run `nvm use`, there is a nvmrc file.
-# Fetch node modules `npm install`
-# Install gulp `npm install gulp`
-
-#### Gulp Commands ####
+## Gulp Commands ##
 * `gulp` runs phases: build, compile, inject
 * `gulp dev` runs phases: build, compile, inject, serve
 * `gulp prod` runs phases: build, compile, compress, inject, test
@@ -25,31 +22,28 @@ _see phase descriptions in the docs section_
 
 ----------
 
-## Docs ##
+# Docs #
 
-### Phases: ###
+#### Phases: ####
 Gulp tasks are grouped out into phases and run using `run-sequence`.  Tasks in each phase can run in parallel.
-# build
-** `dist` and `tmp` directories are deleted.
-** Copies all files that do not need compiled to the `tmp` directory.  
-# compile
-** Compiles and copies all files that need compiled to the `tmp` directory.  
-** Concatenates same of type files into one file
-# compress
-** Compresses images (this can take a wile, so is only used in gulp prod)  
-# inject
-** At this point all the files should be ready in the `tmp` directory
-** Files are copied to dist directory.
-** `tmp` directory is deleted.
-# test
-** TODO
-# serve
-** Uses `browser-sync` to serve up the site.
+1. **build**
+    * `dist` and `tmp` directories are deleted.
+    * Copies all files that do not need compiled to the `tmp` directory.  
+2. **compile**
+    * Compiles and copies all files that need compiled to the `tmp` directory.  
+    * Concatenates same of type files into one file
+3. **compress**
+    * Compresses images (this can take a wile, so is only used in gulp prod)  
+4. **inject**
+    * At this point all the files should be ready in the `tmp` directory
+    * Files are copied to dist directory.
+    * `tmp` directory is deleted.
+5. **test**
+    * TODO
+6. **serve**
+    * Uses `browser-sync` to serve up the site.
 
-### Current Build Modules: ###
-# build: 
-
-### To DO: ###
+#### To Do: ####
 * Watch process
 * JavaScript compressions and uglify
 * CSS compression
