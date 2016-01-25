@@ -39,9 +39,8 @@ gulp.task('compile', ['compile-sass', 'compile-jade'], function (cb) {
  * COMPRESS PHASE
  */
 requireDir('./gulp/compress', {recurse: true})
-gulp.task('compress', function (cb) {
-  console.log('**** image compression may take a wile ****')
-  runSequence('compress-images', cb)
+gulp.task('compress', ['compress-images', 'compress-css', 'compress-js'], function (cb) {
+  return cb()
 })
 
 

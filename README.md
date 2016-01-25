@@ -3,7 +3,7 @@
 ### What is this repository for? ###
 Kickplate - Build process starter kit
 
-Lightweight modular build process focusing on Celerity Wexford's tech stack. This build process is specific to our needs, but is modular enough for us to quickly customize it to new languages and processes.
+Lightweight modular Gulp build process focusing on Celerity Wexford's tech stack. This build process is specific to our needs, but is modular enough for us to quickly customize it to new languages and processes.
 
 ----------
 

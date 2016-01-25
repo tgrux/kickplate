@@ -11,6 +11,5 @@ const del = require('del')
  * cleans out the build directory
  */
 gulp.task('inject-post-clean', function (cb) {
-	return cb()
-  	// del([path.tmp_path], { force: true }).then(paths => { cb() })
+	del([path.tmp_path], { force: true }).then(paths => { cb() })
 })
