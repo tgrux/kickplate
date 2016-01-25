@@ -26,20 +26,26 @@ _see phase descriptions in the docs section_
 
 #### Phases: ####
 Gulp tasks are grouped out into phases and run using `run-sequence`.  Tasks in each phase can run in parallel.
+
 1. **build**
     * `dist` and `tmp` directories are deleted.
     * Copies all files that do not need compiled to the `tmp` directory.  
+
 2. **compile**
     * Compiles and copies all files that need compiled to the `tmp` directory.  
     * Concatenates same of type files into one file
+
 3. **compress**
     * Compresses images (this can take a wile, so is only used in gulp prod)  
+
 4. **inject**
     * At this point all the files should be ready in the `tmp` directory
     * Files are copied to dist directory.
     * `tmp` directory is deleted.
+
 5. **test**
     * TODO
+
 6. **serve**
     * Uses `browser-sync` to serve up the site.
 
