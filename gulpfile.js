@@ -15,7 +15,6 @@ const gulp = require('gulp')
 const runSequence = require('run-sequence') // used to make some tasks synchronous
 const requireDir = require('require-dir')
 
-
 /**
  * BUILD PHASE
  */
@@ -30,8 +29,7 @@ gulp.task('build', function (cb) {
  */
 requireDir('./gulp/compile', {recurse: true})
 gulp.task('compile', ['compile-sass', 'compile-jade'], function (cb) {
-  // runSequence( cb)
-  return cb()
+	return cb()
 })
 
 
@@ -60,7 +58,7 @@ gulp.task('inject', function (cb) {
  */
 requireDir('./gulp/serve', {recurse: true})
 gulp.task('serve', function (cb) {
-  runSequence('serve-sync', cb)
+  runSequence('serve-sync', 'serve-watch', cb)
 })
 
 
@@ -73,7 +71,7 @@ gulp.task('default', function (callback) {
 })
 
 gulp.task('dev', function (callback) {
-  runSequence('build', 'compile', 'inject', 'serve', callback)
+  runSequence('default', 'serve', callback)
 })
 
 gulp.task('prod', function (callback) {
