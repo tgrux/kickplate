@@ -49,7 +49,7 @@ gulp.task('compress', ['compress-images', 'compress-css', 'compress-js'], functi
  * injects all dependencies into the index file
  */
 requireDir('./gulp/inject', {recurse: true})
-gulp.task('inject', function (cb) {
+gulp.task('inject', ['concat-js', 'concat-vendor'], function (cb) {
   runSequence('inject-index', 'copy-to-dist', 'inject-post-clean', cb)
 })
 
