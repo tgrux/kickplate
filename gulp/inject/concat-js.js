@@ -1,7 +1,7 @@
 'use strict'
 
 // import references
-const paths = require(global.gulp_config_path);
+const path = require(global.gulp_config_path);
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const runSequence = require('run-sequence');
@@ -15,11 +15,11 @@ gulp.task('concat-js', function (cb) {
 })
 
 gulp.task('sub-concat-js', function (cb) {
-  	return gulp.src([paths.tmp_path + '/js/**/*'])
+  	return gulp.src([path.tmp_path + '/js/**/*'])
 		.pipe(concat('site.js'))
-    	.pipe(gulp.dest(paths.tmp_path + '/js'))
+    	.pipe(gulp.dest(path.tmp_path + '/js'))
 })
 
 gulp.task('remove-non-concat-js', function (cb) {
- 	del([paths.tmp_path + '/js/**', '!' + paths.tmp_path + '/js', '!' + paths.tmp_path + '/js/site.js'], { force: true }).then(paths => { cb() }) 	
+ 	del([path.tmp_path + '/js/**', '!' + path.tmp_path + '/js', '!' + path.tmp_path + '/js/site.js'], { force: true }).then(paths => { cb() }) 	
 })

@@ -1,7 +1,7 @@
 'use strict'
 
 // import references
-const paths = require(global.gulp_config_path);
+const path = require(global.gulp_config_path);
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const runSequence = require('run-sequence');
@@ -15,11 +15,11 @@ gulp.task('concat-vendor', function (cb) {
 })
 
 gulp.task('sub-concat-vendor', function (cb) {
-  	return gulp.src([paths.tmp_path + '/vendor/**/*', '!' + paths.tmp_path + '/vendor/modernizr.js'])
+  	return gulp.src([path.tmp_path + '/vendor/**/*', '!' + path.tmp_path + '/vendor/modernizr.js'])
 		.pipe(concat('vendor.js'))
-    	.pipe(gulp.dest(paths.tmp_path + '/vendor'))
+    	.pipe(gulp.dest(path.tmp_path + '/vendor'))
 })
 
 gulp.task('remove-non-concat-vendor', function (cb) {
- 	del([paths.tmp_path + '/vendor/**', '!' + paths.tmp_path + '/vendor', '!' + paths.tmp_path + '/vendor/vendor.js', '!' + paths.tmp_path + '/vendor/modernizr.js'], { force: true }).then(paths => { cb() })
+ 	del([path.tmp_path + '/vendor/**', '!' + path.tmp_path + '/vendor', '!' + path.tmp_path + '/vendor/vendor.js', '!' + path.tmp_path + '/vendor/modernizr.js'], { force: true }).then(paths => { cb() })
 })
