@@ -14,12 +14,10 @@ gulp.task('compile-sass', function () {
   // console.log(paths.src_path + '/**/*.scss')
   return gulp.src(paths.src_path + '/**/*.scss')
     .pipe(sass({
-      outputStyle: 'compact',
-      // allows sass files to include without the path. ex: "@import helpers" as apposed to "@import /_scss/helpers"
-      includePaths: [
-        paths.src_path + '/_scss/helpers',
-        paths.src_path + '/_scss/partials'
-      ]})
+      	outputStyle: 'compact',
+      	// allows sass files to include without the path. ex: "@import helpers" as apposed to "@import /_scss/helpers"
+      	includePaths: paths.scss_paths
+	  })
       .on('error', sass.logError))
     .pipe(concat('src.css'))
     .pipe(gulp.dest(paths.tmp_path + '/css'))

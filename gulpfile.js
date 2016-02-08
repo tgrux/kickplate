@@ -1,8 +1,8 @@
 'use strict'
 /**
- * GULP BUILD PROCESS
+ * GULP startup PROCESS
  * @author tgiegel@celerity.com
- * @description created to be a flexabile build process for the UI
+ * @description created to be a flexabile startup process for the UI
  */
 
 // set roots for includes
@@ -16,11 +16,11 @@ const runSequence = require('run-sequence') // used to make some tasks synchrono
 const requireDir = require('require-dir')
 
 /**
- * BUILD PHASE
+ * startup PHASE
  */
-requireDir('./gulp/build', {recurse: true})
-gulp.task('build', function (cb) {
-  runSequence('build-clean', 'build-copy', cb)
+requireDir('./gulp/startup', {recurse: true})
+gulp.task('startup', function (cb) {
+  runSequence('startup-clean', 'startup-copy', cb)
 })
 
 
@@ -67,7 +67,7 @@ gulp.task('serve', function (cb) {
  * tasks to run in your CLI
  */
 gulp.task('default', function (callback) {
-  runSequence('build', 'compile', 'inject', callback)
+  runSequence('startup', 'compile', 'inject', callback)
 })
 
 gulp.task('dev', function (callback) {
@@ -75,6 +75,6 @@ gulp.task('dev', function (callback) {
 })
 
 gulp.task('prod', function (callback) {
-  console.log('**** building for production... this may take a wile ****')
-  runSequence('build', 'compile', 'compress', 'inject', callback)
+  console.log('**** startuping for production... this may take a wile ****')
+  runSequence('startup', 'compile', 'compress', 'inject', callback)
 })

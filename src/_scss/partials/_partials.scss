@@ -1,0 +1,34 @@
+/**
+ * PARTIALS
+ *
+ * single import file for all partials
+ * order matters, so please double check where you are adding things
+ * Using SMACSS - https://smacss.com/book/categorizing
+ */
+// consider installing 
+// https://github.com/colindresj/saffron
+// http://typesettings.io/
+// https://sassline.com/
+
+
+// helper functions used by partials
+@import "helpers";
+
+// Import icons before anything else
+
+// BASE
+@import "base/base";
+
+// LAYOUT
+// most of these styles should be located with their related component
+@import "layout/layout";
+
+// MODULES
+// most of these styles should be located with their related component
+@import "module/module";
+
+// STATE
+@import "state/state";
+
+// THEME
+@import "theme/theme";

@@ -1,9 +1,10 @@
-/****************************************************************************
-*	BASE STYLES
-*   Base rules are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, *   a base style says that wherever this element is on the page, it should look like this.
-\****************************************************************************/
+/**
+ * BASE STYLES
+ *
+ * Base rules are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, *   a base style * says that wherever this element is on the page, it should look like this.
+ */
 body {
-	font: normal normal normal 14px/normal $font-lato;
+	font: normal normal normal 14px/normal $font-a;
 	color: $black;
 } 
 
@@ -12,46 +13,42 @@ hr
     border-width: 2px;
 }
 
-/****************************************************************************
-*	TYPOGRAPHY
-\****************************************************************************/
-p {
-	font: chFont(p);		
-}
-small {
-	font: chFont(small);
-}
+/**
+ *	--------------- TYPOGRAPHY
+ */
+p { font: applyFont(p); }
+small { font: applyFont(small); }
 ul,
 ol {
 	li 
 	{
 		margin-top: 8px;
 		margin-bottom: 8px;
-		font: chFont(p);
+		font: applyFont(p);
 	}
 }
 h1 {
-	font: chFont(h1);
+	font: applyFont(h1);
 }
 h2 {
-	font: chFont(h2);
+	font: applyFont(h2);
 }
 h3 {
-	font: chFont(h3);
+	font: applyFont(h3);
 }
 h4 {
-	font: chFont(h4);
+	font: applyFont(h4);
 }
 h5 {
-	font: chFont(h5);
+	font: applyFont(h5);
 }
 h6 {
-	font: chFont(h6);
+	font: applyFont(h6);
 }
 
-/****************************************************************************
-*	LINKS
-\****************************************************************************/
+/**
+ * --------------- LINKS
+ */
 a,
 a:visited,
 a:before,
@@ -92,15 +89,15 @@ small {
 }
 
 
-/****************************************************************************
-*	FORM
-\****************************************************************************/
+/**
+ * --------------- FORM
+ */
 form,
 .form
 {
 	h4
 	{
-		font: chFont(h4);
+		font: applyFont(h4);
 		color: $green;
 		margin: 15px 0 0 0;
 	}
@@ -117,9 +114,10 @@ form,
 }
 
 
-/****************************************************************************
-*	OUTLINES - remove all focus outlines
-\****************************************************************************/
+/**
+ * --------------- OUTLINES
+ * remove all focus outlines
+ */
 *:focus
 {
 	outline: none !important;

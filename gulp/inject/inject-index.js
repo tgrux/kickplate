@@ -22,7 +22,7 @@ gulp.task('inject-index', ['copy-to-dist'], function () {
   // #3 src streams
   var srcStream = gulp.src([(paths.tmp_path + '/js/**/*.js'), (paths.tmp_path + '/css/**/*.css')], {read: false})
 
-  return gulp.src(paths.tmp_path + '/' + paths.index_name)
+  return gulp.src(paths.inject_loc)
     .pipe(inject(priorityStream, {starttag: '<!-- inject:head:{{ext}} -->', ignorePath: paths.tmp_dir}))
     // this will always inject vendor files before app files
     .pipe(inject(series(vendorStream, srcStream), {ignorePath: paths.tmp_dir})) 

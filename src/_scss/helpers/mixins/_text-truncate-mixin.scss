@@ -1,9 +1,0 @@
-/**
- * Text Truncate
- * An easy way to truncate text with an ellipsis. Requires the element to be block or inline-block
- */
-@mixin text-truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}

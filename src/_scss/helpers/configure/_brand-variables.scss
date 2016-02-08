@@ -1,0 +1,140 @@
+/****************************************************************************
+*
+*	CONNECTED HEALTH BASICS
+*
+\****************************************************************************/
+
+/**
+ * Lato 
+ * Styles:
+ * 		Normal (aka 400), Bold (aka 700)
+ */
+$font-a: 'Lato', sans-serif;
+
+/**
+ * Roboto Slab 
+ * Styles: 
+ * 		Normal (aka 400), Light (300), Thin (100)
+ */
+$font-b: 'Roboto Slab', serif;
+
+// old colors
+//$green-lt: #45b24a; 
+$blue-green-lt: #aee0d7;
+$blue-md: #5cbffd; 
+$blue-grey: #bac9d1;
+
+// new colors
+$green: #45b24a;
+$green-dk: #1f8548;
+$blue: #243e86;
+$blue-dk: #0c154e;
+$blue-lt: #afb9ee;
+$black: #282c36;
+$purple: #95348c;
+$orange: #ed7523;
+$turquoise: #009ca7;
+$red: #ac1c36;
+$yellow: #f6b331;
+$grey: #929295;
+$grey-lt: #f0f0f0;
+$grey-mlt: #8D8E92;
+// lightend colors
+$green-lt: lighten($green,20%);
+$blue-grey: #bac9d1;
+$blue-grey-lt: $grey-lt;
+$blue-grey-vlt: #eaeff1;
+
+
+
+
+
+
+
+// careplan colors
+$cp-blue: #0058ff;
+$cp-blue-lt: #05b5ff;
+$cp-green: #01d259;
+$cp-pink: #5e4ddb; 
+$cp-gradient-pink-start: $cp-pink;
+$cp-gradient-pink-end: #c634fe;
+@mixin cp-pink-gradient()
+{
+	@include gradientHorizontal($cp-gradient-pink-start, $cp-gradient-pink-end);
+}
+$cp-gradient-blue-start: $cp-blue;
+$cp-gradient-blue-end: $cp-blue-lt;
+@mixin cp-blue-gradient()
+{
+	@include gradientHorizontal($cp-gradient-blue-start, $cp-gradient-blue-end);
+}
+
+
+/****************************************************************************
+*	CUSTOM ICON FONT
+\****************************************************************************/
+$icon-Success: "\e903";
+$icon-Rewards2: "\e900";
+$icon-Trash: "\e901";
+$icon-Plus: "\e902";
+$icon-Balanced_Diet: "\e805";
+$icon-BMI: "\e806";
+$icon-Consumption: "\e807";
+$icon-Endurance: "\e808";
+$icon-Health_Maintenance: "\e809";
+$icon-Medical_Compliance: "\e80a";
+$icon-Productivity: "\e80b";
+$icon-Sleep: "\e80c";
+$icon-Speed_Agility: "\e80d";
+$icon-Strength: "\e80e";
+$icon-Vitals: "\e80f";
+$icon-Weight: "\e810";
+$icon-Due_Date: "\e801";
+$icon-Edit_ReassignTask: "\e802";
+$icon-Recurring_Task: "\e803";
+$icon-Undo: "\e804";
+$icon-Default_UserAccount: "\e800";
+$icon-Account_Head: "\e62b";
+$icon-CH_Icon: "\e62a";
+$icon-Briefcase: "\e61f";
+$icon-AR_Icon-path1: "\e620";
+$icon-AR_Icon-path2: "\e621";
+$icon-AR_Icon-path3: "\e622";
+$icon-AR_Icon-path4: "\e623";
+$icon-AR_Icon-path5: "\e624";
+$icon-AR_Icon-path6: "\e625";
+$icon-AR_Icon-path7: "\e626";
+$icon-AR_Icon-path8: "\e627";
+$icon-DownArrow: "\e628";
+$icon-Phone: "\e629";
+$icon-Diet-path1: "\e60e";
+$icon-Diet-path2: "\e60f";
+$icon-Diet-path3: "\e610";
+$icon-Fitness-path1: "\e611";
+$icon-Fitness-path2: "\e612";
+$icon-HealthCoach-path1: "\e613";
+$icon-HealthCoach-path2: "\e614";
+$icon-HealthCoach-path3: "\e615";
+$icon-HealthCoach-path4: "\e616";
+$icon-Pharmacy-path1: "\e617";
+$icon-Pharmacy-path2: "\e618";
+$icon-Pharmacy-path3: "\e619";
+$icon-Physician-path1: "\e61a";
+$icon-Physician-path2: "\e61b";
+$icon-Physician-path3: "\e61c";
+$icon-Physician-path4: "\e61d";
+$icon-Physician-path5: "\e61e";
+$icon-Right_Arrow: "\e600";
+$icon-Calendar: "\e601";
+$icon-Cart: "\e602";
+$icon-Cell: "\e603";
+$icon-Facebook: "\e604";
+$icon-FreePass: "\e605";
+$icon-Instagram: "\e606";
+$icon-LinkedIn: "\e607";
+$icon-Locator: "\e608";
+$icon-Mail: "\e609";
+$icon-Pinterest: "\e60a";
+$icon-Rewards: "\e60b";
+$icon-Twitter: "\e60c";
+$icon-X: "\e60d";

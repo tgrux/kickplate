@@ -1,9 +1,14 @@
-@import 'functions/chFont-function';
-@import 'functions/calculateRem-function';
+/**
+ * HELPERS
+ *
+ * single import file for SCSS variables, functions, and mixins
+ */
+@import 'configure/applyFont-function';
+@import 'functions_mixins/calculateRem-function';
 
-@import 'variables/brand-variables';
+@import 'configure/brand-variables';
 
-@import 'mixins/basic-mixins';
-@import 'mixins/keyframes-mixin';
-@import 'mixins/respond-to-mixin';
-@import 'mixins/text-truncate-mixin';
+@import 'functions_mixins/basic-mixins';
+@import 'functions_mixins/keyframes-mixin';
+@import 'configure/respond-to-mixin';
+@import 'functions_mixins/text-truncate-mixin';
