@@ -6,6 +6,7 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 const runSequence = require('run-sequence');
 const del = require('del');
+const mainBowerFiles = require('main-bower-files');
 
 /**
  * Compress JavaScript

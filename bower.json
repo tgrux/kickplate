@@ -1,0 +1,22 @@
+{
+  "name": "tradeweb",
+  "description": "Tradeweb Redesign",
+  "main": "index.html",
+  "authors": [
+    "Tim Giegel"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/tgrux/kickplate",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6"
+  }
+}

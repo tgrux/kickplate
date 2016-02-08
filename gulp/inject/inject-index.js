@@ -20,6 +20,7 @@ gulp.task('inject-index', ['copy-to-dist'], function () {
   var vendorStream = gulp.src([(paths.tmp_path + '/vendor/**/*.js'), ('!' + paths.tmp_path + '/vendor/modernizr.js')], {read: false})
 
   // #3 src streams
+  // get javascript order from bower
   var srcStream = gulp.src([(paths.tmp_path + '/js/**/*.js'), (paths.tmp_path + '/css/**/*.css')], {read: false})
 
   return gulp.src(paths.inject_loc)

@@ -15,7 +15,6 @@ var inject_locations = [
 
 // javascript vendor injection order
 var jsOrder = [
-	gulp_root + '/tmp/vendor/jquery.js', 
 	gulp_root + '/tmp/vendor/**/*', /* don't change this */
 	'!' + gulp_root + '/tmp/vendor/modernizr.js' /* don't change this */
 ];
@@ -24,7 +23,7 @@ var jsOrder = [
 var scssPaths = [
 	gulp_root + '/' + src_dir + '/_scss/helpers',
     gulp_root + '/' + src_dir + '/_scss/partials',
-	gulp_root + '/vendor'
+	gulp_root + '/bower_components/bootstrap-sass/assets/stylesheets'
 ];
 
 // object available to gulp tasks

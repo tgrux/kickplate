@@ -16,11 +16,11 @@ const runSequence = require('run-sequence') // used to make some tasks synchrono
 const requireDir = require('require-dir')
 
 /**
- * startup PHASE
+ * STARTUP PHASE
  */
 requireDir('./gulp/startup', {recurse: true})
 gulp.task('startup', function (cb) {
-  runSequence('startup-clean', 'startup-copy', cb)
+  	runSequence('startup-clean', 'startup-bower', 'startup-copy', cb)
 })
 
 
@@ -28,8 +28,8 @@ gulp.task('startup', function (cb) {
  * COMPILE PHASE
  */
 requireDir('./gulp/compile', {recurse: true})
-gulp.task('compile', ['compile-sass', 'compile-jade'], function (cb) {
-	return cb()
+gulp.task('compile', function (cb) {
+	runSequence(['compile-sass', 'compile-jade'], cb);
 })
 
 
@@ -37,28 +37,30 @@ gulp.task('compile', ['compile-sass', 'compile-jade'], function (cb) {
  * COMPRESS PHASE
  */
 requireDir('./gulp/compress', {recurse: true})
-gulp.task('compress', ['compress-images', 'compress-css', 'compress-js'], function (cb) {
-  return cb()
+gulp.task('compress', function (cb) {
+	runSequence(['compress-images', 'compress-css', 'compress-js', 'compress-vendor'], cb);
 })
 
 
 /**
  * INJECT PHASE
+ * concats site and vendor js files
  * moves from temp to dist
  * deletes temp directory
  * injects all dependencies into the index file
  */
 requireDir('./gulp/inject', {recurse: true})
-gulp.task('inject', ['concat-js', 'concat-vendor'], function (cb) {
-  runSequence('inject-index', 'copy-to-dist', 'inject-post-clean', cb)
+gulp.task('inject', function (cb) {
+  	runSequence(['concat-js', 'concat-vendor'], 'inject-index', 'copy-to-dist', 'inject-post-clean', cb)
 })
+
 
 /**
  * SERVE PHASE
  */
 requireDir('./gulp/serve', {recurse: true})
 gulp.task('serve', function (cb) {
-  runSequence('serve-sync', 'serve-watch', cb)
+  	runSequence('serve-sync', 'serve-watch', cb)
 })
 
 
@@ -77,4 +79,8 @@ gulp.task('dev', function (callback) {
 gulp.task('prod', function (callback) {
   console.log('**** startuping for production... this may take a wile ****')
   runSequence('startup', 'compile', 'compress', 'inject', callback)
+})
+
+gulp.task('prodserve', function (callback) {
+  runSequence('prod', 'serve', callback)
 })
