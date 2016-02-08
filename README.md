@@ -36,11 +36,11 @@ Gulp tasks are grouped out into phases and run using `run-sequence`.  Tasks in e
     * Concatenates same of type files into one file
 
 3. **compress**
-    * Compresses images (this can take a wile, so is only used in gulp prod)  
+    * Compresses images (this can take a while, so is only used in gulp prod)  
 
 4. **inject**
     * At this point all the files should be ready in the `tmp` directory
-    * Files are copied to dist directory.
+    * Files are concatenated and copied to dist directory.
     * `tmp` directory is deleted.
 
 5. **test**
@@ -50,9 +50,7 @@ Gulp tasks are grouped out into phases and run using `run-sequence`.  Tasks in e
     * Uses `browser-sync` to serve up the site.
 
 #### To Do: ####
-* Watch process
-* JavaScript compressions and uglify
-* CSS compression
+* Typescript support
 * Add file structure automation for, SMACCS, Angular, Tests (similar to NG Poly... but using our formats) 
 * Unit Testing - Jasmine (Karma as the test runner)
 * End to End Testing - Jasmine / Protractor
